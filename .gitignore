@@ -1,0 +1,4 @@
+## spring4 tutorial ignore file ##
+
+.idea
+./target
