@@ -8,7 +8,7 @@
         LIMIT 1
     </select>
 
-    <insert id="addStudentOne" parameterType="com.codingsquid.spring4Tutorial.rest_controller.command.StudentCommand">
+    <insert id="addStudentOne" parameterType="StudentCommand">
         INSERT INTO `students` (`name`, `age`, `identifier_num`)
         VALUES (#{name}, #{age}, #{identifier_num})
     </insert>
