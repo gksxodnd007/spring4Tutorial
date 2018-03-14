@@ -13,5 +13,11 @@
 <body>
     <h1>${author}</h1>
     Hello World! Spring 4 By CodingSquid
+    <form action="/addStudent" method="post">
+        <input type="text" name="name" placeholder="name"/><br>
+        <input type="text" name="age" placeholder="age"/><br>
+        <input type="text" name="identifier_num" placeholder="identifier_num"/><br>
+        <input type="submit" value="Complete" />
+    </form>
 </body>
 </html>

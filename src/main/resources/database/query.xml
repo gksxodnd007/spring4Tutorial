@@ -3,8 +3,13 @@
 <mapper namespace="database">
     <select id="getStudentByName" resultType="com.codingsquid.spring4Tutorial.model.Student" parameterType="String">
         SELECT *
-        FROM students
-        WHERE students.name=#{name}
+        FROM `students`
+        WHERE `name`=#{name}
         LIMIT 1
     </select>
+
+    <insert id="addStudentOne" parameterType="com.codingsquid.spring4Tutorial.rest_controller.command.StudentCommand">
+        INSERT INTO `students` (`name`, `age`, `identifier_num`)
+        VALUES (#{name}, #{age}, #{identifier_num})
+    </insert>
 </mapper>
