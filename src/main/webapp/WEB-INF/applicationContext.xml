@@ -19,6 +19,11 @@
         <property name="url" value="${spring.database.host}" />
         <property name="username" value="${spring.database.username}" />
         <property name="password" value="${spring.database.password}" />
+        <property name="initialSize" value="5" />
+        <property name="maxActive" value="50" />
+        <property name="maxIdle" value="50" />
+        <property name="minIdle" value="20" />
+        <property name="maxWait" value="2000" />
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -39,5 +44,12 @@
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="student" class="com.codingsquid.spring4Tutorial.model.Student">
+        <property name="name" value="codingsquid" />
+        <property name="age" value="25" />
+        <property name="id" value="2" />
+        <property name="identifier_num" value="20132287" />
     </bean>
 </beans>
