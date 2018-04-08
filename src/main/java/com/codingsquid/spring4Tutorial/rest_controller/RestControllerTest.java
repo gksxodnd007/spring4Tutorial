@@ -1,7 +1,6 @@
 package com.codingsquid.spring4Tutorial.rest_controller;
 
 import com.codingsquid.spring4Tutorial.dao.StudentRepositoryImpl;
-import com.codingsquid.spring4Tutorial.model.Mentor;
 import com.codingsquid.spring4Tutorial.model.Student;
 import com.codingsquid.spring4Tutorial.rest_controller.command.StudentCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.print.attribute.standard.Severity;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -28,10 +23,7 @@ public class RestControllerTest {
     }
 
     @RequestMapping(value = "/restControllerTest", method = RequestMethod.GET)
-    public Student restAPITest(@RequestParam("name") String name, ServletContext sc) {
-        WebApplicationContext webCtx = WebApplicationContextUtils.getWebApplicationContext(sc);
-        System.out.println(webCtx.getServletContext().getMimeType("application/json"));
-        System.out.println(webCtx.getBean("mentor", Mentor.class).getMentee());
+    public Student restAPITest(@RequestParam("name") String name) {
         return studentRepositoryImpl.findStudentByName(name);
     }
 

@@ -45,11 +45,4 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-
-    <bean id="student" class="com.codingsquid.spring4Tutorial.model.Student">
-        <property name="name" value="codingsquid" />
-        <property name="age" value="25" />
-        <property name="id" value="2" />
-        <property name="identifier_num" value="20132287" />
-    </bean>
 </beans>
